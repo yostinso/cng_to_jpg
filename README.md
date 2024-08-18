@@ -27,4 +27,4 @@ This [repository](https://github.com/yostinso/cng_to_jpg) contains three files y
 * [`cng_to_jpg.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/cng_to_jpg.js)
 * [`zip.min.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/zip.min.js)
 
-Just download the files into a folder together, and open `cng_to_jpg.html` in your favorite browser circa 2020 or newer, drop your `.cng`s  onto the handy target, and voila. If you want support for 
+Just download the files into a folder together, and open `cng_to_jpg.html` in your favorite browser circa 2020 or newer, drop your `.cng`s  onto the handy target, and voila. If you don't want support for downloading multiple files as a zip, you can leave off `zip.min.js`.
