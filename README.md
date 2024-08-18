@@ -22,4 +22,9 @@ Unfortunately, that macro doesn't work in modern versions of Excel. (And so time
 
 Well, if Excel changes too much, what might not? Perhaps web browsers will provide a more stable platform. (Time will tell.)
 
-This repository includes a single file `cng_to_jpg.html` that implements the same XOR functionality. Just download the HTML file, open it in your favorite browser circa 2020 or newer, drop your `.cng`s  onto the handy target, and voila.
+This [repository](https://github.com/yostinso/cng_to_jpg) contains three files you can download to use offline:
+* [`cng_to_jpg.html`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/cng_to_jpg.html)
+* [`cng_to_jpg.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/cng_to_jpg.js)
+* [`zip.min.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/zip.min.js)
+
+Just download the files into a folder together, and open `cng_to_jpg.html` in your favorite browser circa 2020 or newer, drop your `.cng`s  onto the handy target, and voila. If you want support for 
