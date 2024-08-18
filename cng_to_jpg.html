@@ -56,8 +56,12 @@
             #controls input:hover {
                 border-style: inset;
             }
+            #controls #downloadZip {
+                display: none;
+            }
         </style>
     </head>
+    <script src="zip.min.js"></script>
     <script src="cng_to_jpg.js"></script>
     <body>
         <div id="dropzone">Drop CNG files here</div>
@@ -69,6 +73,7 @@
         </div>
         <div id="controls">
             <input type="button" id="downloadAll" value="Download All">
+            <input type="button" id="downloadZip" value="Download All as zip">
         </div>
         <div id="jpegs"></div>
     </body>
