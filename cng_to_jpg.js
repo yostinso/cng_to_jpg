@@ -51,9 +51,19 @@ function layoutImages(imgs) {
     });
     if (imgs.length > 0) {
         var controls = document.getElementById('controls');
-        var downloadButton = document.getElementById('downloadAll');
-        downloadButton.value = 'Download All ' + imgs.length + ' image(s)';
         controls.style.display = 'flex';
+    }
+
+    var downloadButton = document.getElementById('downloadAll');
+    if (imgs.length > 0 && imgs.length <= 10) {
+        downloadButton.style.display = 'block';
+        if (imgs.length > 1) {
+            downloadButton.value = 'Download All ' + imgs.length + ' images';
+        } else {
+            downloadButton.value = 'Download Image';
+        }
+    } else {
+        downloadButton.style.display = 'none';
     }
 
     var downloadZipButton = document.getElementById('downloadZip');
