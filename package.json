@@ -1,0 +1,23 @@
+{
+  "name": "cng-to-jpg",
+  "version": "1.0.0",
+  "description": "Convert National Geographic CNG files to JPG format",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yostinso/cng_to_jpg.git"
+  },
+  "author": "E.O. Stinson",
+  "license": "MIT",
+  "dependencies": {
+    "@zip.js/zip.js": "^2.7.48"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}
