@@ -15,6 +15,7 @@
   "author": "E.O. Stinson",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^20.16.0",
     "@zip.js/zip.js": "^2.7.48"
   },
   "devDependencies": {

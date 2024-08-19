@@ -1,4 +1,2 @@
-export default class CngToJpg {
-    constructor() {
-    }
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
