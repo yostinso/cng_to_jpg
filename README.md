@@ -36,7 +36,7 @@ Something like this should work before I get it all packaged up:
 2. `npx cng-to-jpg --help`
 
 #### To use the .exe on windows
-1. Download [the exe](https://yostinso.github.io/cng_to_jpg/dist/cng_to_jpg.exe)
+1. Download [the exe](https://github.com/yostinso/cng_to_jpg/raw/main/dist/cng-to-jpg.exe)
 2. `.\cng-to-jpg.exe --help`
    e.g.
    `.\cng-to-jpg.exe convertFolder c:\ngm_files -o c:\jpg_files`
