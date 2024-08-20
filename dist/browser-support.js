@@ -141,3 +141,4 @@ function configureDropzone(dropzoneId) {
     });
 }
 exports.configureDropzone = configureDropzone;
+//# sourceMappingURL=browser-support.js.map

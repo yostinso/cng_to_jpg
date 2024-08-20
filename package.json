@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Convert National Geographic CNG files to JPG format",
   "main": "dist/index.js",
+  "bin": {
+    "cng-to-jpg": "dist/index.js"
+  },
   "scripts": {
     "build": "npm run build:copy && tsc",
     "build:copy": "node copy_static.js",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --inspect-brk dist/index.js convertFolder c:\\users\\yosti\\downloads\\ngms\\in -o c:\\users\\yosti\\downloads\\ngms\\out"
   },
   "repository": {
     "type": "git",
@@ -17,9 +21,11 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^20.16.0",
-    "@zip.js/zip.js": "^2.7.48"
+    "@zip.js/zip.js": "^2.7.48",
+    "commander": "^12.1.0"
   },
   "devDependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
     "typescript": "^4.0.0"
   }
 }

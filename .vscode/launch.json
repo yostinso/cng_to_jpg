@@ -9,6 +9,22 @@
             "request": "launch",
             "name": "Open cng_to_jpg.html",
             "file": "${workspaceFolder}/dist/cng_to_jpg.html"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch cng-to-jpg CLI",
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": [
+                "convertFolder",
+                "c:\\users\\yosti\\downloads\\ngms\\in",
+                "-o",
+                "c:\\users\\yosti\\downloads\\ngms\\out"
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "sourceMaps": true,
+            "outputCapture": "std"
         }
     ]
 }

@@ -101,3 +101,4 @@ class ImageFile {
     }
 }
 exports.ImageFile = ImageFile;
+//# sourceMappingURL=cng-to-jpg.js.map
