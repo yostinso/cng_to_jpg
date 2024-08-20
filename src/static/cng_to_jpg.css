@@ -1,0 +1,59 @@
+#dropzone {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 200px;
+    color: #777;
+    margin: 20px auto;
+}
+#dropzone.dragover {
+    border-color: #000;
+    color: #000;
+}
+#instructions {
+    width: 40%;
+    margin: 20px auto;
+}
+p {
+    font: 14px sans-serif;
+    margin: 0 0 5px 0;
+}
+#jpegs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+#jpegs .div {
+    flex: 1;
+}
+#jpegs img {
+    margin: 10px;
+    height: 400px;
+    width: auto;
+    border: groove 2px #ccc
+}
+#controls {
+    display: flex;
+    justify-content: center;
+}
+#controls input {
+    margin: 30px;
+    height: 80px;
+    background-color: aquamarine;
+    border: outset 8px #8888dd;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 8px 8px 8px #ccc;
+    text-shadow: 2px 2px 2px #ccc;
+}
+#controls input:hover {
+    border-style: inset;
+}
+#controls #downloadAll {
+    display: none;
+}
+#controls #downloadZip {
+    display: none;
+}

@@ -4,7 +4,8 @@
   "description": "Convert National Geographic CNG files to JPG format",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:copy && tsc",
+    "build:copy": "node copy_static.js",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

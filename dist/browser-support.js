@@ -10,14 +10,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.configureDropzone = void 0;
-const cng_to_jpg_1 = require("./cng-to-jpg");
-const { BlobWriter, ZipWriter } = require('@zip.js/zip.js');
+let ImgFile;
+let BlobWriter, ZipWriter;
+if (typeof window === 'undefined') {
+    ImgFile = require("./cng-to-jpg");
+    const zip = require('@zip.js/zip.js');
+    BlobWriter = zip.BlobWriter;
+    ZipWriter = zip.ZipWriter;
+}
+else {
+    ImgFile = ImageFile;
+    ZipWriter = window.zip.ZipWriter;
+    BlobWriter = window.zip.BlobWriter;
+}
 function processFiles(files) {
     return __awaiter(this, void 0, void 0, function* () {
         let imgFiles = [];
         for (let i = 0; i < files.length; i++) {
             let file = files[i];
-            let img = yield cng_to_jpg_1.ImageFile.load(file);
+            let img = yield ImgFile.load(file);
             imgFiles.push(img.toJpg());
         }
         return imgFiles;
@@ -78,7 +89,7 @@ function showDownloadButtons(numImages) {
             yield zipWriter.add(img.title, blob.stream(), { level: 0 });
         }
         zipWriter.close();
-        blobWriter.getData((blob) => {
+        blobWriter.getData().then((blob) => {
             let a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'images.zip';

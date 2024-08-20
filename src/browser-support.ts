@@ -1,17 +1,37 @@
-import { ImageFile } from "./cng-to-jpg";
-const { BlobWriter, ZipWriter } = require('@zip.js/zip.js');
+import { ImageFile as ImageFileT } from './cng-to-jpg';
+let ImgFile: typeof ImageFileT;
+let BlobWriter: any, ZipWriter: any;
+declare global {
+    let ImageFile: typeof ImageFileT;
+    interface Window {
+        zip: {
+            BlobWriter: any;
+            ZipWriter: any;
+        }
+    }
+}
+if (typeof window === 'undefined') {
+    ImgFile = require("./cng-to-jpg");
+    const zip = require('@zip.js/zip.js');
+    BlobWriter = zip.BlobWriter;
+    ZipWriter = zip.ZipWriter;
+} else {
+    ImgFile = ImageFile;
+    ZipWriter = window.zip.ZipWriter;
+    BlobWriter = window.zip.BlobWriter;
+}
 
-async function processFiles(files: FileList): Promise<ImageFile[]> {
-    let imgFiles: ImageFile[] = [];
+async function processFiles(files: FileList): Promise<ImageFileT[]> {
+    let imgFiles: ImageFileT[] = [];
     for (let i = 0; i < files.length; i++) {
         let file = files[i];
-        let img = await ImageFile.load(file);
+        let img = await ImgFile.load(file);
         imgFiles.push(img.toJpg());
     }
     return imgFiles;
 }
 
-function layoutImages(imgs: ImageFile[]) {
+function layoutImages(imgs: ImageFileT[]) {
     const container = document.getElementById('jpegs');
     if (container === null) {
         throw new Error('Could not find element with id "jpegs"');
@@ -74,7 +94,7 @@ function showDownloadButtons(numImages: number) {
             await zipWriter.add(img.title, blob.stream(), { level: 0 });
         }
         zipWriter.close();
-        blobWriter.getData((blob: Blob) => {
+        blobWriter.getData().then((blob: Blob) => {
             let a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'images.zip';
