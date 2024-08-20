@@ -1,7 +1,7 @@
 # National Geographic CNG to JPG converter
 
 ## I'm in a hurry
-[Click here](https://yostinso.github.io/cng_to_jpg/cng_to_jpg.html) to launch the converter.
+[Click here](https://yostinso.github.io/cng_to_jpg/dist/cng_to_jpg.html) to launch the converter.
 
 ## What is this?
 Some years ago, National Geographic released CD box sets with archived images of their entire magazine catalog. The files are in a proprietary format with the extension `.cng`.
@@ -22,9 +22,23 @@ Unfortunately, that macro doesn't work in modern versions of Excel. (And so time
 
 Well, if Excel changes too much, what might not? Perhaps web browsers will provide a more stable platform. (Time will tell.)
 
-This [repository](https://github.com/yostinso/cng_to_jpg) contains three files you can download to use offline:
-* [`cng_to_jpg.html`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/cng_to_jpg.html)
-* [`cng_to_jpg.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/cng_to_jpg.js)
-* [`zip.min.js`](https://raw.githubusercontent.com/yostinso/cng_to_jpg/main/zip.min.js)
+This repository contains a node module (not currently published to npm) with a built-in CLI tool, and an `.exe` for Windows x64 users.
 
-Just download the files into a folder together, and open `cng_to_jpg.html` in your favorite browser circa 2020 or newer, drop your `.cng`s  onto the handy target, and voila. If you don't want support for downloading multiple files as a zip, you can leave off `zip.min.js`.
+#### To use from your own Javascript
+Something like this should work before I get it all packaged up:
+1. Clone the repo
+2. `import { ImageFile } from "cng_to_jpg/cng-to-jpg.ts"
+   or
+   `const { ImageFile } = require("cng_to_jpg/cng-to-jpg.js");
+
+#### To use the node CLI tool (requires node installed already)
+1. Clone the repo
+2. `npx cng-to-jpg --help`
+
+#### To use the .exe on windows
+1. Download [the exe](https://yostinso.github.io/cng_to_jpg/dist/cng_to_jpg.exe)
+2. `.\cng-to-jpg.exe --help`
+   e.g.
+   `.\cng-to-jpg.exe convertFolder c:\ngm_files -o c:\jpg_files`
+   or
+   `.\cng-to-jpg.exe convert c:\ngm_files\001.cng c:\ngm_files\002.cng -o c:\jpg_files`
