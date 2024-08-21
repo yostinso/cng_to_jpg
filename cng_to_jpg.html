@@ -39,11 +39,11 @@
                 width: auto;
                 border: groove 2px #ccc
             }
-            #controls {
-                display: none;
+            .controls {
+                display: flex;
                 justify-content: center;
             }
-            #controls input {
+            .controls input {
                 margin: 30px;
                 height: 80px;
                 background-color: aquamarine;
@@ -53,10 +53,10 @@
                 box-shadow: 8px 8px 8px #ccc;
                 text-shadow: 2px 2px 2px #ccc;
             }
-            #controls input:hover {
+            .controls input:hover {
                 border-style: inset;
             }
-            #controls #downloadZip {
+            .controls #downloadZip, .controls #downloadAll {
                 display: none;
             }
         </style>
@@ -65,13 +65,14 @@
     <script src="cng_to_jpg.js"></script>
     <body>
         <div id="dropzone">Click or Drop CNG files here</div>
+        <div class="controls"><input type="button" id="chooseFolder" value="Convert Entire Folder (to zip)"></div>
         <div id="instructions">
             <p>Drag and drop CNG files above to convert them to JPG by XORing every byte with 0xef.</p>
             <p>Files will be downloadable with the same name but with the .jpg extension.</p>
             <p>Credit to <a href="https://www.youtube.com/watch?v=3iDEh3cSqHs">Aging Engineer</a> on
                 YouTube for the XOR key.</p>
         </div>
-        <div id="controls">
+        <div class="controls">
             <input type="button" id="downloadAll" value="Download All">
             <input type="button" id="downloadZip" value="Download All as zip">
         </div>
