@@ -179,7 +179,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     var hasZip = window.hasOwnProperty('zip');
-    if (hasZip) {
+    var hasFolderPicker = window.hasOwnProperty('showDirectoryPicker');
+    if (hasZip && hasFolderPicker) {
         var chooseFolderButton = document.getElementById('chooseFolder');
         chooseFolderButton.addEventListener('click', function() {
             convertAndZipDirectory(
