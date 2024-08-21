@@ -114,12 +114,16 @@ async function readDirectory(folderPromise, path = '') {
 }
 
 async function convertAndZipDirectory(folderPromise) {
+    let chooseFolderButton = document.getElementById('chooseFolder');
+    const oldInputText = chooseFolderButton.value;
+    chooseFolderButton.value = "Working...";
     let files = await readDirectory(folderPromise);
     var hasZip = window.hasOwnProperty('zip');
     if (hasZip) {
         var blobWriter = new zip.BlobWriter("application/zip");
         var zipWriter = new zip.ZipWriter(blobWriter);
         for (let i in files) {
+            chooseFolderButton.value = "Working... " + (parseInt(i) + 1) + " of " + files.length;
             let file = files[i];
             file.toJpg();
             await zipWriter.add(
@@ -137,6 +141,7 @@ async function convertAndZipDirectory(folderPromise) {
             URL.revokeObjectURL(a.href);
         });
     }
+    chooseFolderButton.value = oldInputText;
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
