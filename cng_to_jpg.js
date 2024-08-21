@@ -180,8 +180,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     var hasZip = window.hasOwnProperty('zip');
     var hasFolderPicker = window.hasOwnProperty('showDirectoryPicker');
+    var chooseFolderButton = document.getElementById('chooseFolder');
     if (hasZip && hasFolderPicker) {
-        var chooseFolderButton = document.getElementById('chooseFolder');
         chooseFolderButton.addEventListener('click', function() {
             convertAndZipDirectory(
                 window.showDirectoryPicker({ id: "cngs", startIn: "downloads" })
